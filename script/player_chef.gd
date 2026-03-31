@@ -27,8 +27,8 @@ func _physics_process(delta: float) -> void:
 		rotation.y = lerp_angle(rotation.y, target_angle, LERP_VAL)
 		# ---------------------------
 
-		if anim and anim.has_animation("Lari"):
-			anim.play("Lari")
+		if anim and anim.has_animation("Jalan 1"):
+			anim.play("Jalan 1")
 	else:
 		# Berhenti perlahan
 		velocity.x = move_toward(velocity.x, 0, SPEED)

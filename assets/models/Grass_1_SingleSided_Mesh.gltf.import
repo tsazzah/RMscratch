@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bbbs22y21l8is"
-path="res://.godot/imported/Chef.glb-8bcbe1788374ac3377cf195768a5812a.scn"
+uid="uid://cf3m03xskkkur"
+path="res://.godot/imported/Grass_1_SingleSided_Mesh.gltf-414da8c0d8eb2a573936c3f6daf491a5.scn"
 
 [deps]
 
-source_file="res://Chef.glb"
-dest_files=["res://.godot/imported/Chef.glb-8bcbe1788374ac3377cf195768a5812a.scn"]
+source_file="res://assets/models/Grass_1_SingleSided_Mesh.gltf"
+dest_files=["res://.godot/imported/Grass_1_SingleSided_Mesh.gltf-414da8c0d8eb2a573936c3f6daf491a5.scn"]
 
 [params]
 
-nodes/root_type="CharacterBody3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true

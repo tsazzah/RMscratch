@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ivamlg85p2xv"
-path.s3tc="res://.godot/imported/Hi_Alis Cep Utama.png-b358b2a13ed9df6d23d5ae10533ea6e1.s3tc.ctex"
+path.s3tc="res://.godot/imported/Hi_Alis Cep Utama.png-c364b54afbc739f6cfcb602d2948525e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Hi_Alis Cep Utama.png"
-dest_files=["res://.godot/imported/Hi_Alis Cep Utama.png-b358b2a13ed9df6d23d5ae10533ea6e1.s3tc.ctex"]
+source_file="res://assets/Hi_Alis Cep Utama.png"
+dest_files=["res://.godot/imported/Hi_Alis Cep Utama.png-c364b54afbc739f6cfcb602d2948525e.s3tc.ctex"]
 
 [params]
 

@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bc7cwbobe4g87"]
 
-[ext_resource type="PackedScene" uid="uid://bbbs22y21l8is" path="res://Chef.glb" id="1_m7fh5"]
-[ext_resource type="Script" uid="uid://ddrrba6rg7dtf" path="res://player_chef.gd" id="2_iay3k"]
+[ext_resource type="PackedScene" uid="uid://bbbs22y21l8is" path="res://assets/models/Chef.glb" id="1_m7fh5"]
+[ext_resource type="Script" uid="uid://ddrrba6rg7dtf" path="res://script/player_chef.gd" id="2_iay3k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7fh5"]
 radius = 1.4824219
 height = 4.0352783
 
-[node name="Chef" unique_id=1788358206 instance=ExtResource("1_m7fh5")]
+[node name="Chef" unique_id=1609019624 instance=ExtResource("1_m7fh5")]
 script = ExtResource("2_iay3k")
 
-[node name="Armature" parent="." index="0" unique_id=511287287]
+[node name="Armature" parent="." index="0" unique_id=902194742]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.27454692, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1994742960]

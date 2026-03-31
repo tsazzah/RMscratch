@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckh8pgcx37ij5"
-path.s3tc="res://.godot/imported/Chef_Alis Cep Utama.png-1e16000f952953da595fe5685b24b106.s3tc.ctex"
+uid="uid://bxufhbs6clrfy"
+path.s3tc="res://.godot/imported/Chef_Untitled_Artwork 224.png-9935966d718657b2651d686079d4e137.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d88a388a79b03045674473cda15978ff"
+"md5": "4ac325990931c7fd8e0ffea168809a67"
 }
 
 [deps]
 
-source_file="res://Chef_Alis Cep Utama.png"
-dest_files=["res://.godot/imported/Chef_Alis Cep Utama.png-1e16000f952953da595fe5685b24b106.s3tc.ctex"]
+source_file="res://assets/Chef_Untitled_Artwork 224.png"
+dest_files=["res://.godot/imported/Chef_Untitled_Artwork 224.png-9935966d718657b2651d686079d4e137.s3tc.ctex"]
 
 [params]
 

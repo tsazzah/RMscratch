@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7tc2naut0fn4"
-path.s3tc="res://.godot/imported/Hi_Untitled_Artwork 224.png-ae34c943c948ccee269bde1f5dbc3f49.s3tc.ctex"
+uid="uid://7lo8nq5blvx7"
+path.s3tc="res://.godot/imported/Chef_Untitled_Artwork 224.png-e1b841b5b3ff30b250b365fa3adc367f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Hi_Untitled_Artwork 224.png"
-dest_files=["res://.godot/imported/Hi_Untitled_Artwork 224.png-ae34c943c948ccee269bde1f5dbc3f49.s3tc.ctex"]
+source_file="res://assets/models/Chef_Untitled_Artwork 224.png"
+dest_files=["res://.godot/imported/Chef_Untitled_Artwork 224.png-e1b841b5b3ff30b250b365fa3adc367f.s3tc.ctex"]
 
 [params]
 

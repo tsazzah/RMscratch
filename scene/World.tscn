@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du6276iolf1h0"]
 
-[ext_resource type="PackedScene" uid="uid://bc7cwbobe4g87" path="res://PlayerChef.tscn" id="2_2dftf"]
-[ext_resource type="Script" uid="uid://bcwk4gf6yt8ti" path="res://camera_3d.gd" id="4_js7pq"]
+[ext_resource type="Script" uid="uid://bcwk4gf6yt8ti" path="res://script/camera_3d.gd" id="1_iibxp"]
+[ext_resource type="PackedScene" uid="uid://bc7cwbobe4g87" path="res://scene/PlayerChef.tscn" id="2_dtoa7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmany"]
 size = Vector3(50, 1, 50)
@@ -39,12 +39,9 @@ environment = SubResource("Environment_eu7l1")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2068893627]
 transform = Transform3D(1, 0, 0, 0, 0.53877074, 0.8424524, 0, -0.8424524, 0.53877074, 0, 12, 6)
-script = ExtResource("4_js7pq")
+script = ExtResource("1_iibxp")
 
-[node name="Chef" parent="." unique_id=1788358206 instance=ExtResource("2_2dftf")]
+[node name="Chef" parent="." unique_id=1788358206 instance=ExtResource("2_dtoa7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="Armature" parent="Chef" index="0" unique_id=511287287]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.27454692, 0)
 
 [editable path="Chef"]

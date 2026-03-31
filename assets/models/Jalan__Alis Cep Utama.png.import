@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mvlwl018r32"
-path.s3tc="res://.godot/imported/Jalan__Untitled_Artwork 224.png-9aae46bbd22c11c5a659452e9833ce7f.s3tc.ctex"
+uid="uid://cpav0cthvgweo"
+path.s3tc="res://.godot/imported/Jalan__Alis Cep Utama.png-3c518f6201ec1fff8547e0f1725a0cb6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "4ac325990931c7fd8e0ffea168809a67"
+"md5": "d88a388a79b03045674473cda15978ff"
 }
 
 [deps]
 
-source_file="res://models/Jalan__Untitled_Artwork 224.png"
-dest_files=["res://.godot/imported/Jalan__Untitled_Artwork 224.png-9aae46bbd22c11c5a659452e9833ce7f.s3tc.ctex"]
+source_file="res://assets/models/Jalan__Alis Cep Utama.png"
+dest_files=["res://.godot/imported/Jalan__Alis Cep Utama.png-3c518f6201ec1fff8547e0f1725a0cb6.s3tc.ctex"]
 
 [params]
 
