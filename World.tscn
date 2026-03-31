@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://du6276iolf1h0"]
+
+[ext_resource type="PackedScene" uid="uid://bc7cwbobe4g87" path="res://PlayerChef.tscn" id="2_2dftf"]
+[ext_resource type="Script" uid="uid://bcwk4gf6yt8ti" path="res://camera_3d.gd" id="4_js7pq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cmany"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c6gwx"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bcbcq"]
+
+[sub_resource type="Sky" id="Sky_js7pq"]
+sky_material = SubResource("ProceduralSkyMaterial_bcbcq")
+
+[sub_resource type="Environment" id="Environment_eu7l1"]
+background_mode = 2
+sky = SubResource("Sky_js7pq")
+
+[node name="World" type="Node3D" unique_id=886046686]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1146505158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1187800780]
+transform = Transform3D(-1, -1.509958e-07, 0, 1.509958e-07, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_cmany")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1300736151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068, -0.1, -0.029)
+shape = SubResource("BoxShape3D_c6gwx")
+debug_color = Color(0, 0.6, 0.69803923, 0.74509805)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1043583776]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=793907285]
+environment = SubResource("Environment_eu7l1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2068893627]
+transform = Transform3D(1, 0, 0, 0, 0.53877074, 0.8424524, 0, -0.8424524, 0.53877074, 0, 12, 6)
+script = ExtResource("4_js7pq")
+
+[node name="Chef" parent="." unique_id=1788358206 instance=ExtResource("2_2dftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Armature" parent="Chef" index="0" unique_id=511287287]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.27454692, 0)
+
+[editable path="Chef"]
