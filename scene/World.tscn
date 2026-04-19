@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du6276iolf1h0"]
 
+[ext_resource type="Script" uid="uid://b7f26v7rfrqq6" path="res://script/world.gd" id="1_dtoa7"]
 [ext_resource type="Script" uid="uid://bcwk4gf6yt8ti" path="res://script/camera_3d.gd" id="1_iibxp"]
-[ext_resource type="PackedScene" uid="uid://bc7cwbobe4g87" path="res://scene/PlayerChef.tscn" id="2_dtoa7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmany"]
 size = Vector3(50, 1, 50)
@@ -19,6 +19,7 @@ background_mode = 2
 sky = SubResource("Sky_js7pq")
 
 [node name="World" type="Node3D" unique_id=886046686]
+script = ExtResource("1_dtoa7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1146505158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -41,20 +42,8 @@ environment = SubResource("Environment_eu7l1")
 transform = Transform3D(1, 0, 0, 0, 0.53877074, 0.8424524, 0, -0.8424524, 0.53877074, 0, 12, 6)
 script = ExtResource("1_iibxp")
 
-[node name="Chef" parent="." unique_id=1609019624 instance=ExtResource("2_dtoa7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="Players" type="Node3D" parent="." unique_id=342085280]
 
-[node name="Skeleton3D" parent="Chef/Armature" parent_id_path=PackedInt32Array(1609019624, 132377236) index="0" unique_id=1277164255]
-bones/0/rotation = Quaternion(0, 0, -0.30213147, 0.95326626)
-bones/1/rotation = Quaternion(0.0011353046, 0.00015228939, 0.13294876, 0.99112236)
-bones/2/rotation = Quaternion(0.01547026, -0.0006989566, -0.039320923, 0.99910665)
-bones/3/rotation = Quaternion(0.9959308, 0.035999615, -0.07473366, 0.03522556)
-bones/4/rotation = Quaternion(-0.021772252, -0.010550849, -0.84369844, 0.5362721)
-bones/6/position = Vector3(-1.8162158, 0.2966146, -1.0913923)
-bones/7/rotation = Quaternion(0.8147968, -0.5797468, -4.4696626e-05, 0.0001535806)
-bones/8/rotation = Quaternion(4.4659184e-05, -1.2762806e-08, -0.7588894, 0.65121955)
-bones/10/position = Vector3(0.33211735, 0.84330124, 1.5946918)
-bones/11/rotation = Quaternion(-0.2508178, -0.058854833, -0.0751007, 0.9633205)
-bones/12/rotation = Quaternion(-0.07336729, 0.9592002, 0.27224758, -0.020823605)
-
-[editable path="Chef"]
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Players" unique_id=356008722]
+_spawnable_scenes = PackedStringArray("uid://bc7cwbobe4g87")
+spawn_path = NodePath("..")
