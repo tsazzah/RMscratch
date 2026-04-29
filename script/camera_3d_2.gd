@@ -1,7 +1,7 @@
 extends Camera3D
 
 @export var target_node : Node3D # Tempat menaruh karakter 'Jalan_'
-@export var offset : Vector3 = Vector3(0, 10, 8) # Jarak tetap kamera
+@export var offset : Vector3 = Vector3(-5, 4, 6) # Jarak tetap kamera
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

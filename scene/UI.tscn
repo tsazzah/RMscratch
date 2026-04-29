@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cbxm1hrp3i06t"]
+
+[ext_resource type="Script" uid="uid://cftu01cj3oudg" path="res://scene/ui.gd" id="1_qe48f"]
+
+[node name="UI" type="Control" unique_id=73756788]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qe48f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=820011259]
+
+[node name="LocLabel" type="Label" parent="CanvasLayer" unique_id=1847753733]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 33.0
+text = "Location: Unknown"
