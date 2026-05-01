@@ -5,10 +5,11 @@ extends Node2D
 
 func _on_host_button_pressed():
 	NetworkManager.host_game()
+	var ips = []
 	for addr in IP.get_local_addresses():
 		if addr.begins_with("192.168.") or addr.begins_with("10."):
-			status_label.text = "Your IP: " + addr
-			break
+			ips.append(addr)
+	status_label.text = "Your IPs:\n" + "\n".join(ips)
 	_start_game()
 
 func _on_join_button_pressed():
