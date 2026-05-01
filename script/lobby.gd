@@ -9,7 +9,6 @@ func _on_host_button_pressed():
 	for addr in IP.get_local_addresses():
 		if addr.begins_with("192.168.") or addr.begins_with("10."):
 			ips.append(addr)
-	status_label.text = "Your IPs:\n" + "\n".join(ips)
 	_start_game()
 
 func _on_join_button_pressed():
