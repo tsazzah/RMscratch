@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ckf5lql4je7v1"]
+
+[ext_resource type="PackedScene" uid="uid://bwa4y8nrx4egl" path="res://assets/models/Mangkok_Rawon.glb" id="1_due26"]
+[ext_resource type="Script" uid="uid://dksxmbtfugu7g" path="res://script/bowl_rawon.gd" id="2_bsesc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ljlus"]
+height = 1.5483398
+radius = 1.1982422
+
+[node name="Bowl_Rawon" unique_id=2003942915 groups=["pickup"] instance=ExtResource("1_due26")]
+script = ExtResource("2_bsesc")
+
+[node name="Area3D" type="Area3D" parent="." index="8" unique_id=3408602]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1109841102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9304199, 0)
+shape = SubResource("CylinderShape3D_ljlus")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

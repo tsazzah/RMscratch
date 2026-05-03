@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://buho2yfkwakpa"]
+
+[ext_resource type="Script" uid="uid://bu3dcre06wh6b" path="res://scene/yard.gd" id="1_evwkn"]
+[ext_resource type="Script" uid="uid://b6k6qy01v0pew" path="res://script/door_yard_to_kitchen.gd" id="1_y46m8"]
+[ext_resource type="PackedScene" uid="uid://cbxm1hrp3i06t" path="res://scene/UI.tscn" id="3_ubjog"]
+[ext_resource type="PackedScene" uid="uid://b0664dgx32211" path="res://scene/WayangNew.tscn" id="5_48mt1"]
+[ext_resource type="Script" uid="uid://bcwk4gf6yt8ti" path="res://script/camera_3d.gd" id="5_a023x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_evwkn"]
+size = Vector3(1.2, 2.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evwkn"]
+albedo_color = Color(0.62076974, 0.7598565, 0.393216, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ubjog"]
+size = Vector3(1.2, 2.2, 0.1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6tdbn"]
+
+[sub_resource type="Sky" id="Sky_e0p8o"]
+sky_material = SubResource("ProceduralSkyMaterial_6tdbn")
+
+[sub_resource type="Environment" id="Environment_cadpm"]
+background_mode = 2
+sky = SubResource("Sky_e0p8o")
+
+[node name="Yard" type="Node3D" unique_id=1801854600]
+script = ExtResource("1_evwkn")
+
+[node name="DoorYard_to_Kitchen" type="Node3D" parent="." unique_id=1648863492]
+script = ExtResource("1_y46m8")
+target_scene = "res://scene/Kitchen.tscn"
+spawn_point_name = "Spawn_from_Kitchen"
+
+[node name="Area3D" type="Area3D" parent="DoorYard_to_Kitchen" unique_id=1399162806]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorYard_to_Kitchen/Area3D" unique_id=2070002322]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.796, 1.3, -1.4877492)
+shape = SubResource("BoxShape3D_evwkn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorYard_to_Kitchen" unique_id=522628331]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.7963943, 1.2993622, -1.432971)
+material_override = SubResource("StandardMaterial3D_evwkn")
+mesh = SubResource("BoxMesh_ubjog")
+
+[node name="DoorYard_to_Home" type="Node3D" parent="." unique_id=1531110745]
+script = ExtResource("1_y46m8")
+target_scene = "res://scene/Home.tscn"
+spawn_point_name = "Spawn_from_Home"
+
+[node name="Area3D" type="Area3D" parent="DoorYard_to_Home" unique_id=481259840]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorYard_to_Home/Area3D" unique_id=555900693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.032, 1.299, 4.65)
+shape = SubResource("BoxShape3D_evwkn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorYard_to_Home" unique_id=1967723363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0562668, 1.2993622, 4.650304)
+material_override = SubResource("StandardMaterial3D_evwkn")
+mesh = SubResource("BoxMesh_ubjog")
+
+[node name="Spawn_from_Kitchen" type="Node3D" parent="." unique_id=1026944753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.33624268, -1.5039274)
+
+[node name="Spawn_from_Home" type="Node3D" parent="." unique_id=1377439810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02917, 0.6435852, 3.8029785)
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1572846202]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0.083618164)
+use_collision = true
+size = Vector3(1, 1, 1.0167236)
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=305226062]
+transform = Transform3D(10, 0, 0, 0, 3, 0, 0, 0, 0.5, 2.2729492, 1.5, 4.8)
+use_collision = true
+size = Vector3(0.54541016, 1, 1)
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=1670774967]
+transform = Transform3D(10, 0, 0, 0, 3, 0, 0, 0, 0.5, -3.3066711, 1.5, 4.8)
+use_collision = true
+size = Vector3(0.32965088, 1, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=594429777]
+transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 10, 5, 1.5, 2.0800781)
+use_collision = true
+size = Vector3(1, 1, 0.5839844)
+
+[node name="Wall4" type="CSGBox3D" parent="." unique_id=1053325277]
+transform = Transform3D(0.5, 0, 0, 0, 3, 0, 0, 0, 10, 5, 1.5, -3.5172205)
+use_collision = true
+size = Vector3(1, 1, 0.29492188)
+
+[node name="UI" parent="." unique_id=73756788 instance=ExtResource("3_ubjog")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1865323965]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=603329533]
+environment = SubResource("Environment_cadpm")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=994767721]
+transform = Transform3D(1, 0, 0, 0, 0.53877074, 0.8424524, 0, -0.8424524, 0.53877074, 0, 12, 6)
+script = ExtResource("5_a023x")
+
+[node name="Wayang RIG_NEW" parent="." unique_id=466728950 groups=["player"] instance=ExtResource("5_48mt1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1552124, 0)
+
+[connection signal="body_entered" from="DoorYard_to_Kitchen/Area3D" to="DoorYard_to_Kitchen" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="DoorYard_to_Kitchen/Area3D" to="DoorYard_to_Kitchen" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="DoorYard_to_Home/Area3D" to="DoorYard_to_Home" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="DoorYard_to_Home/Area3D" to="DoorYard_to_Home" method="_on_area_3d_body_exited"]
