@@ -141,10 +141,18 @@ func _physics_process(delta: float) -> void:
 					anim.play("Idle Biasa")
 
 	move_and_slide()
-	_sync_position.rpc(position, rotation)
+	if is_multiplayer_authority():
+		var anim_name = ""
+		if anim:
+			anim_name = anim.current_animation
+		_sync_state.rpc(position, rotation, anim_name)
 
-@rpc("authority", "unreliable")
-func _sync_position(pos: Vector3, rot: Vector3):
+@rpc("any_peer", "unreliable")
+func _sync_state(pos: Vector3, rot: Vector3, anim_name: String):
 	if not is_multiplayer_authority():
 		position = pos
 		rotation = rot
+		var anim = get_node_or_null("AnimationPlayer")
+		if anim and anim_name != "" and anim.has_animation(anim_name):
+			if anim.current_animation != anim_name:
+				anim.play(anim_name)

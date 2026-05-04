@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://gr7m3g600sxd"]
 
-[ext_resource type="Script" path="res://script/lobby.gd" id="1_uxvnl"]
+[ext_resource type="Script" uid="uid://o04pbyvg3hxy" path="res://script/lobby.gd" id="1_uxvnl"]
 [ext_resource type="Texture2D" uid="uid://km084bktyqs4" path="res://assets/images/StartPage2.png" id="2_y7qk6"]
 
-[node name="Lobby_tscn" type="Node2D" unique_id=1270624497]
+[node name="Lobby_tscn" type="Control" unique_id=813197703]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_uxvnl")
 
 [node name="StartPage2" type="Sprite2D" parent="." unique_id=703424308]
@@ -12,10 +14,12 @@ scale = Vector2(0.6009102, 0.60213345)
 texture = ExtResource("2_y7qk6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=761536810]
+layout_mode = 0
 offset_left = 458.0
 offset_top = 440.0
 offset_right = 710.0
 offset_bottom = 541.0
+mouse_filter = 0
 alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=458530464]
@@ -29,8 +33,9 @@ placeholder_text = "Enter host IP:..."
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=1635563683]
 layout_mode = 2
 text = "Join Game"
+
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=222222222]
 layout_mode = 2
-text = ""
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_host_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_join_button_pressed"]
