@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://du6276iolf1h0"]
 
 [ext_resource type="Script" uid="uid://bcwk4gf6yt8ti" path="res://script/camera_3d.gd" id="1_iibxp"]
-[ext_resource type="PackedScene" uid="uid://4perh6py6jqi" path="res://scene/chef.tscn" id="2_iibxp"]
 [ext_resource type="PackedScene" uid="uid://ckf5lql4je7v1" path="res://scene/bowl_rawon.tscn" id="3_dtoa7"]
+[ext_resource type="Script" uid="uid://ks3py0g4bv0k" path="res://script/world.gd" id="4_world"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmany"]
 size = Vector3(50, 1, 50)
@@ -20,6 +20,7 @@ background_mode = 2
 sky = SubResource("Sky_js7pq")
 
 [node name="World" type="Node3D" unique_id=886046686]
+script = ExtResource("4_world")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1146505158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -38,12 +39,11 @@ debug_color = Color(0, 0.6, 0.69803923, 0.74509805)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=793907285]
 environment = SubResource("Environment_eu7l1")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=2068893627 node_paths=PackedStringArray("target_node")]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2068893627]
 transform = Transform3D(1, 0, 0, 0, 0.5387708, 0.84245247, 0, -0.84245247, 0.5387708, 0, 13.13685, 10.167098)
 script = ExtResource("1_iibxp")
-target_node = NodePath("../Chef")
-
-[node name="Chef" parent="." unique_id=774860051 instance=ExtResource("2_iibxp")]
 
 [node name="Bowl_Rawon" parent="." unique_id=2003942915 instance=ExtResource("3_dtoa7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9435377, 0, 0)
+
+[node name="Players" type="Node3D" parent="." unique_id=999000001]

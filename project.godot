@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="game-design"
-run/main_scene="uid://boyv30qgv2tt0"
+run/main_scene="res://scene/lobby.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://dtmh7gby0sawi"
 MapTransition="*uid://duel37mv3sj0q"
+NetworkManager="*res://script/network_manager.gd"
 
 [input]
 

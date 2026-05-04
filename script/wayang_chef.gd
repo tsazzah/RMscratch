@@ -8,7 +8,11 @@ var idle_timer = 0.0
 var idleSpecial_played = false
 
 func _physics_process(delta: float) -> void:
-	# 1. Gravitasi
+	if not is_multiplayer_authority():
+		move_and_slide()
+		return
+	# ... rest of existing code unchanged
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
