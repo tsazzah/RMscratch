@@ -21,6 +21,7 @@ var nearby_interactable = null
 var use_right_hand = true
 
 func _ready():
+	add_to_group("player")
 	await get_tree().process_frame
 	print("Spawn request:", GameManager.next_spawn)
 	var spawn_name = GameManager.next_spawn

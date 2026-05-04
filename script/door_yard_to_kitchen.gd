@@ -6,27 +6,20 @@ extends Node3D
 var triggered := false
 
 
+func _ready():
+	await get_tree().create_timer(1.0).timeout
+	triggered = false
+	
 func _on_area_3d_body_entered(body):
-	print("ENTER:", body.name)
-
 	if triggered:
-		print("Already triggered")
 		return
-
-	print("Is player?", body.is_in_group("player"))
-
 	if not body.is_in_group("player"):
 		return
-
+	if not body.is_multiplayer_authority():
+		return
 	triggered = true
-
-	print("🚪 Door triggered →", target_scene)
-
 	GameManager.next_spawn = spawn_point_name
-
-	var err = get_tree().change_scene_to_file(target_scene)
-	print("Scene change result:", err)
 	MapTransition.fade_to_scene(target_scene)
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	pass # Replace with function body.
+	triggered = false

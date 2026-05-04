@@ -1,12 +1,30 @@
 [gd_scene format=3 uid="uid://oe8lq7mce51b"]
 
 [ext_resource type="Script" uid="uid://cg15ag4uucyid" path="res://script/door_home_to_yard.gd" id="1_78r0b"]
-[ext_resource type="Script" uid="uid://chl8xs816tusa" path="res://script/home.gd" id="1_vasqj"]
+[ext_resource type="Script" uid="uid://ks3py0g4bv0k" path="res://script/world.gd" id="2_world"]
+[ext_resource type="Script" uid="uid://bcwk4gf6yt8ti" path="res://script/camera_3d.gd" id="3_cam"]
+[ext_resource type="PackedScene" uid="uid://cbxm1hrp3i06t" path="res://scene/UI.tscn" id="4_ui"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vasqj"]
+size = Vector3(1.2, 2.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_home"]
+albedo_color = Color(0.3, 0.6, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_home"]
+size = Vector3(1.2, 2.2, 0.1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_home"]
+
+[sub_resource type="Sky" id="Sky_home"]
+sky_material = SubResource("ProceduralSkyMaterial_home")
+
+[sub_resource type="Environment" id="Environment_home"]
+background_mode = 2
+sky = SubResource("Sky_home")
 
 [node name="Home" type="Node3D" unique_id=1351689239]
-script = ExtResource("1_vasqj")
+script = ExtResource("2_world")
 
 [node name="DoorHome_to_Yard" type="Node3D" parent="." unique_id=680638609]
 script = ExtResource("1_78r0b")
@@ -15,9 +33,46 @@ target_scene = "res://scene/Yard.tscn"
 [node name="Area3D" type="Area3D" parent="DoorHome_to_Yard" unique_id=2083164755]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorHome_to_Yard/Area3D" unique_id=2062167282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.049, 1.299, 4.748)
 shape = SubResource("BoxShape3D_vasqj")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorHome_to_Yard" unique_id=111000010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0562668, 1.2993622, 4.650304)
+material_override = SubResource("StandardMaterial3D_home")
+mesh = SubResource("BoxMesh_home")
+
 [node name="Spawn_from_Yard" type="Node3D" parent="." unique_id=268798888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0035988, 0.4735489, 3.8774571)
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=373417868]
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0.083618164)
+use_collision = true
+size = Vector3(1, 1, 1.0167236)
+
+[node name="Wall" type="CSGBox3D" parent="." unique_id=1873085912]
+transform = Transform3D(10, 0, 0, 0, 3, 0, 0, 0, 0.5, 2.2729492, 1.5, 4.8)
+use_collision = true
+size = Vector3(0.54541016, 1, 1)
+material = SubResource("StandardMaterial3D_home")
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=1387042386]
+transform = Transform3D(10, 0, 0, 0, 3, 0, 0, 0, 0.5, -3.3066711, 1.5, 4.8)
+use_collision = true
+size = Vector3(0.32965088, 1, 1)
+material = SubResource("StandardMaterial3D_home")
+
+[node name="UI" parent="." unique_id=73756788 instance=ExtResource("4_ui")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1675238918]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=811275817]
+environment = SubResource("Environment_home")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=886243641]
+transform = Transform3D(1, 0, 0, 0, 0.53877074, 0.8424524, 0, -0.8424524, 0.53877074, 0, 12, 6)
+script = ExtResource("3_cam")
+
+[node name="Players" type="Node3D" parent="." unique_id=999000001]
 
 [connection signal="body_entered" from="DoorHome_to_Yard/Area3D" to="DoorHome_to_Yard" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="DoorHome_to_Yard/Area3D" to="DoorHome_to_Yard" method="_on_area_3d_body_exited"]

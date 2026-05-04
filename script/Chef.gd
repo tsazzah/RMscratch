@@ -22,6 +22,7 @@ var hold_scale = Vector3(0.5, 0.5, 0.5)
 var use_right_hand = true
 
 func _ready():
+	add_to_group("player")
 	if right_hand == null:
 		print("❌ Right hand HoldPoint NOT FOUND")
 	else:

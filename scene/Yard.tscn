@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://buho2yfkwakpa"]
 
-[ext_resource type="Script" uid="uid://bu3dcre06wh6b" path="res://scene/yard.gd" id="1_evwkn"]
 [ext_resource type="Script" uid="uid://b6k6qy01v0pew" path="res://script/door_yard_to_kitchen.gd" id="1_y46m8"]
 [ext_resource type="PackedScene" uid="uid://cbxm1hrp3i06t" path="res://scene/UI.tscn" id="3_ubjog"]
-[ext_resource type="PackedScene" uid="uid://b0664dgx32211" path="res://scene/WayangNew.tscn" id="5_48mt1"]
 [ext_resource type="Script" uid="uid://bcwk4gf6yt8ti" path="res://script/camera_3d.gd" id="5_a023x"]
+[ext_resource type="Script" path="res://script/world.gd" id="2_world"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_evwkn"]
 size = Vector3(1.2, 2.2, 1)
@@ -25,7 +24,7 @@ background_mode = 2
 sky = SubResource("Sky_e0p8o")
 
 [node name="Yard" type="Node3D" unique_id=1801854600]
-script = ExtResource("1_evwkn")
+script = ExtResource("2_world")
 
 [node name="DoorYard_to_Kitchen" type="Node3D" parent="." unique_id=1648863492]
 script = ExtResource("1_y46m8")
@@ -63,7 +62,7 @@ mesh = SubResource("BoxMesh_ubjog")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.33624268, -1.5039274)
 
 [node name="Spawn_from_Home" type="Node3D" parent="." unique_id=1377439810]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02917, 0.6435852, 3.8029785)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02917, 0.6435852, 1.0)
 
 [node name="Floor" type="CSGBox3D" parent="." unique_id=1572846202]
 transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 0, 0.083618164)
@@ -101,8 +100,7 @@ environment = SubResource("Environment_cadpm")
 transform = Transform3D(1, 0, 0, 0, 0.53877074, 0.8424524, 0, -0.8424524, 0.53877074, 0, 12, 6)
 script = ExtResource("5_a023x")
 
-[node name="Wayang RIG_NEW" parent="." unique_id=466728950 groups=["player"] instance=ExtResource("5_48mt1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1552124, 0)
+[node name="Players" type="Node3D" parent="." unique_id=999000002]
 
 [connection signal="body_entered" from="DoorYard_to_Kitchen/Area3D" to="DoorYard_to_Kitchen" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="DoorYard_to_Kitchen/Area3D" to="DoorYard_to_Kitchen" method="_on_area_3d_body_exited"]

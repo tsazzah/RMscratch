@@ -43,4 +43,4 @@ func _on_join_button_pressed():
 	multiplayer.connected_to_server.connect(func(): _start_game())
 
 func _start_game():
-	get_tree().change_scene_to_file("res://scene/World.tscn")
+	get_tree().change_scene_to_file("res://scene/Home.tscn")

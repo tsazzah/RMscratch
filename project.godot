@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://dtmh7gby0sawi"
-MapTransition="*uid://duel37mv3sj0q"
+MapTransition="*res://scene/MapTransition.tscn"
 NetworkManager="*res://script/network_manager.gd"
 
 [input]
